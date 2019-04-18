@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82884b0d1783c9843895b99cc2548a6b, type: 3}
+  m_Name: IrisSampleAsset
+  m_EditorClassIdentifier: 
+  samplePrefab: {fileID: 5207835666058684868, guid: 704957c3d22c7de448b14722ccb96cd4,
+    type: 3}
+  samplesCsvData: {fileID: 4900000, guid: c83fbd3c9f01ad94f86f0e8997540263, type: 3}
+  sampleAssetCsvData: {fileID: 4900000, guid: 9d4f7e2993c2ca04095ce562f84b8a03, type: 3}
+  knownProportion: 0.807
