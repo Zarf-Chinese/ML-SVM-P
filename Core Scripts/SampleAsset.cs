@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace Zarf.SVME
+namespace Zarf.SVMP
 {
     [CreateAssetMenu(menuName = "SampleAsset", fileName = "NewSampleAsset")]
     public class SampleAsset : ScriptableObject

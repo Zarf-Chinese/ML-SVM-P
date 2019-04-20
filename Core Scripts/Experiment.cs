@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace Zarf.SVME
+namespace Zarf.SVMP
 {
     public class Experiment : MonoBehaviour
     {
@@ -121,7 +121,7 @@ namespace Zarf.SVME
             float maxEpe = 0;
             for (var i = 0; i < this.genderAmount; i++)
             {
-                var epe = this.CalculateElecticPotentialEnergy(testStatus, i);
+                var epe = this.CalculateElecticPotential(testStatus, i);
                 //记录总电势能最大的gender
                 if (epe > maxEpe)
                 {
@@ -132,21 +132,21 @@ namespace Zarf.SVME
             return predictedGender;
         }
         /// <summary>
-        /// 计算某个状态点对于某个极性的电势能。
+        /// 计算某个极性的所有电荷在某个状态点的电势。
         /// </summary>
         /// <param name="target"></param>
         /// <param name="gender"></param>
         /// <returns></returns>
-        public float CalculateElecticPotentialEnergy(Status target, int gender)
+        public float CalculateElecticPotential(Status target, int gender)
         {
-            //获得所有改极性的电子的总电势能
+            //获得所有该极性的电子的总电势
             var genderStatuses = samples[gender].ConvertAll((sample) => sample.status);
-            var totalEPE = 0f;
+            var totalEP = 0f;
             /**
             电场力公式：                    f= kQq/(r^2)
             电势绝对值公式：              e= |kq/r|
             假设每一个实验值的电荷量绝对值都为1
-            不考虑常数的电势能绝对值公式：  e=1/r
+            不考虑常数的电势绝对值公式：  e=1/r
              */
             //计算总电势能
             foreach (var genderStatus in genderStatuses)
@@ -157,9 +157,9 @@ namespace Zarf.SVME
                 {
                     return float.MaxValue;
                 }
-                totalEPE += 1 / r;//将genderStatus在当前target位置的电势能叠加到总电势能中
+                totalEP += 1 / r;//将genderStatus在当前target位置的电势叠加到总电势中
             }
-            return totalEPE;
+            return totalEP;
         }
         /// <summary>
         /// 添入一个sample。

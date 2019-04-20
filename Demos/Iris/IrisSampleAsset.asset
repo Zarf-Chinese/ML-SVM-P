@@ -16,4 +16,4 @@ MonoBehaviour:
     type: 3}
   samplesCsvData: {fileID: 4900000, guid: c83fbd3c9f01ad94f86f0e8997540263, type: 3}
   sampleAssetCsvData: {fileID: 4900000, guid: 9d4f7e2993c2ca04095ce562f84b8a03, type: 3}
-  knownProportion: 0.807
+  knownProportion: 0.25
